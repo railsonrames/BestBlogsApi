@@ -11,7 +11,15 @@ namespace Repository
         }
 
         public DbSet<Comment> Comments { get; set; }
-
         public DbSet<Post> Posts { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Comment>()
+                .HasOne(c => c.Post)
+                .WithMany(c => c.Comments)
+                .HasForeignKey(c => c.PostId)
+                .OnDelete(DeleteBehavior.Cascade);
+        }
     }
 }
