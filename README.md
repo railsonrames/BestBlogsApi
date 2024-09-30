@@ -73,3 +73,10 @@ If you feel like this is to easy, we have some extra challenges you might want t
 If you struggle at any time when uploading your solution, you can upload to a private GitHub repository and we will review it.
 
 ## Good luck!
+
+## Aditional Steps
+
+To check code coverage this project uses Coverlet package from nuget general repository linked to test project.
+
+I use this command when I'm on test .csproj folder to analise percentage of coverage:
+dotnet test /p:CollectCoverage=true
